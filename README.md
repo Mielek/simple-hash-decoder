@@ -37,5 +37,5 @@ String DecodeHash(long salt, long devider,
 Working code avaliable at https://mielowski.com/simple-hash-decoder/
 
 ### Know problems:
-- Error can be thrown if randomizer contains less characters than maksimal remainder
+- Error can be thrown if randomizer contains less characters than maximal remainder
 - Devider equal 0 cause error
