@@ -12,9 +12,9 @@ long GetHash(string s) {
 }
 ```
 
-We can generalize the problem by replacing ``7`` with salt, ``37`` with devider and ``acegilmnoprstuwxyz`` string with randomizer
+We can generalize the problem by replacing ``7`` with salt variable, ``37`` with devider variable and ``"acegilmnoprstuwxyz"`` with randomizer variable.
 
-Example of solution (in Java):
+### Example of solution (in Java):
 ```java
 String DecodeHash(long salt, long devider,
     String randomizer, long hash) {
@@ -28,7 +28,7 @@ String DecodeHash(long salt, long devider,
 }
 ```
 
-### Example of hashes 
+### Example of hashes:
 ```JavaScript
 "rano"===13625924
 "marzenie"===25157672851591
@@ -36,3 +36,6 @@ String DecodeHash(long salt, long devider,
 
 Working code avaliable at https://mielowski.com/simple-hash-decoder/
 
+### Know problems:
+- Error can be thrown if randomizer contains less characters than maksimal remainder
+- Devider equal 0 cause error
