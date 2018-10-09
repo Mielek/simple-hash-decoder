@@ -28,7 +28,7 @@ String DecodeHash(long salt, long devider,
 }
 ```
 
-### Example of hash of 4 letter string 
+### Example of hashes 
 ```JavaScript
 "rano"===13625924
 "marzenie"===25157672851591
