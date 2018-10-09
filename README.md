@@ -34,3 +34,5 @@ String DecodeHash(long salt, long devider,
 "marzenie"===25157672851591
 ```
 
+Working code avaliable at https://mielowski.com/simple-hash-decoder/
+
