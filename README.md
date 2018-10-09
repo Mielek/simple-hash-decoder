@@ -2,7 +2,7 @@
 
 The exercise is to decode string hashed by the following function
 
-```
+```csharp
 long GetHash(string s) {
     long h = 7;
     for (int i = 0; i < s.Length; i++)
