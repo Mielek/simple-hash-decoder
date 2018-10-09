@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    text-align: left;
+    list-style: none;
+    margin-left: 33%;
+}

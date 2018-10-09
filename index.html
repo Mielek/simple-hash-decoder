@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="http://mielowski.com/simple-hash-decoder">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <![endif]-->
+  <title>Simple Hash Decoder</title>
+</head>
+
+<body>
+  <div className='social_media'>
+    <a href='https://github.com/mielek'>
+      <svg viewBox='0 0 16 16' width='25px' height='25px'>
+        <use xlink:href='/social-icons.svg#github'></use>
+      </svg>
+    </a>
+  </div>
+  <div className='App'>
+    <ul>
+      <li>
+        <label>Salt:</label>
+        <input id='salt' type='number' value=7 />
+      </li>
+      <li>
+        <label>Devider:</label>
+        <input id='devider' type='number' value=37 />
+      </li>
+      <li>
+        <label>Randomizer:</label>
+        <input id='randomizer' type='text' value='acegilmnoprstuwxyz' />
+      </li>
+      <li>
+        <label>Hash:</label>
+        <input id='hash' type='number' value=25157672851591 />
+      </li>
+    </ul>
+    <button id='decode' onclick='decodeHash()'>Decode Hash</button>
+    <label>Result:</label>
+    <input id='decoded' type='text' editable=false />
+  </div>
+</body>
+<script>
+  function decodeHash() {
+    let salt = document.getElementById('salt').value;
+    let divider = document.getElementById('devider').value
+    let randomizer = document.getElementById('randomizer').value;
+    let hash = document.getElementById('hash').value;
+
+    let result = '';
+    do {
+      let reminder = hash % divider;
+      result = randomizer[reminder] + result;
+      hash = (hash - reminder) / divider;
+    } while (hash > salt);
+
+    document.getElementById('decoded').value = result;
+  }
+</script>
+
+</html>
