@@ -40,9 +40,18 @@
         <input id='hash' type='number' value=25157672851591 />
       </li>
     </ul>
-    <button id='decode' onclick='decodeHash()'>Decode Hash</button>
+    <ul>
+      <li>
+        <label>To encode:</label>
+        <input id='encode' type='text' editable=false />
+        <button onclick='encodeString()'>Decode Hash</button>
+      </li>
+      <li>
+        <button onclick='decodeHash()'>Decode Hash</button>
+      </li>
+    </ul>
     <label>Result:</label>
-    <input id='decoded' type='text' editable=false />
+    <input id='result' type='text' editable=false />
   </div>
 </body>
 <script>
@@ -59,7 +68,21 @@
       hash = (hash - reminder) / divider;
     } while (hash > salt);
 
-    document.getElementById('decoded').value = result;
+    document.getElementById('result').value = result;
+  }
+  
+  function encodeString(){
+    let salt = document.getElementById('salt').value;
+    let multiplier = document.getElementById('devider').value
+    let randomizer = document.getElementById('randomizer').value;
+    let string = document.getElementById('encode').value;
+    
+    let hash = salt;
+    for (var i = 0; i < string.length; i++) {
+      hash = hash * multiplier + randomizer.indexOf(string.charAt(i));
+    }
+    
+    document.getElementById('result').value = hash;
   }
 </script>
 
