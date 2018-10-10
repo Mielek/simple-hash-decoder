@@ -36,22 +36,20 @@
         <input id='randomizer' type='text' value='acegilmnoprstuwxyz' />
       </li>
       <li>
-        <label>Hash:</label>
-        <input id='hash' type='number' value=25157672851591 />
-      </li>
-    </ul>
-    <ul>
-      <li>
         <label>To encode:</label>
         <input id='encode' type='text' editable=false />
         <button onclick='encodeString()'>Decode Hash</button>
       </li>
       <li>
+        <label>Hash:</label>
+        <input id='hash' type='number' value=25157672851591 />
         <button onclick='decodeHash()'>Decode Hash</button>
       </li>
+      <li>
+        <label>Result:</label>
+        <input id='result' type='text' editable=false />
+      </li>
     </ul>
-    <label>Result:</label>
-    <input id='result' type='text' editable=false />
   </div>
 </body>
 <script>
